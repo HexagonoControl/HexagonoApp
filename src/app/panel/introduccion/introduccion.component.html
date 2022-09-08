@@ -1,0 +1,197 @@
+<app-panel-control></app-panel-control>
+
+<div class="container-fluid text-center">    
+    <div class="row content">
+      <div class="col-sm-3 sidenav">
+        <p><img width="300" alt="Angular Logo" src="../assets/logo.jpg">
+        </p>
+      </div>
+      <div class="col-sm-8 text-left"> 
+        <h1>Hexágono de Control Organizacional</h1>
+        <p>Esta propuesta, deriva de la convocatoria interna “Proyectos de investigación, desarrollo e innovación año 2018 – 2022, para el fomento a la investigación, la innovación y la transferencia en la Fundación Universitaria Compensar”. En tal marco, la investigación que se desarrolla tiene como objetivo principal diseñar un modelo de control organizacional aplicable a pequeñas organizaciones manufactureras en Colombia, que les permita, a estas, minimizar los diversos tipos de riesgos a los que se enfrentan en su día a día y evitar el incumplimiento de los objetos estratégicos y la destrucción de valor organizacional.
+            Para el anterior propósito, el primer paso fue construir una herramienta que permita obtener un diagnóstico y así, identificar las problemáticas que representan mayores niveles de riesgo para la organización y emprender desde allí un plan de mejoramiento.
+            El aplicativo se encuentra diseñado con la siguiente estructura:</p>
+            <p>
+                1.	Presentación: 
+                Describe las generalidades, convenciones y escalas de medición que configuran el diagnóstico. 
+                <br>
+                2.	Instrumento de diagnóstico:
+                La estructura de medición de la categoría control organizacional y las subcategorías, control administrativo, control operacional, control contable, riesgos ambientales, riesgos sociales y riesgos tecnológicos, utiliza una escala de calificación sencilla y accesible a quienes diligencien el presente instrumento.
+            
+                Calificación	Significado
+                Si	Indica que el recurso existe o la acción se realiza de manera permanente en la organización. 
+                Si parcial	Indica que el recurso existe y no es identificable formalmente y que la acción se realiza de manera irregular. 
+                No	Indica que el recurso no existe o la acción no se realiza en la organización. 
+                No aplica	Indica que la especificidad del ítem no tiene alcance o no sucede en la organización    
+            </p>
+        <hr>
+
+  <table class="a"  [ngStyle]="{backgroundColor:'var(--orange-300)'}">
+
+    <tr>
+        <th>Calificación</th>
+        <th>Significado</th>
+
+    </tr>
+
+    <tr>
+        <td>SI</td>
+        <td>Indica que el recurso existe o la acción se realiza de manera permanente en la organización. </td>
+    </tr>
+    <tr>
+        <td>SI PARCIAL</td>
+        <td>Indica que el recurso existe y no es identificable formalmente y que la acción se realiza de manera irregular. </td>
+    </tr>
+    <tr>
+        <td>NO</td>
+        <td>Indica que el recurso no existe o la acción no se realiza en la organización.  </td>
+    </tr>
+    <tr>
+        <td>NO APLICA</td>
+        <td>Indica que la especificidad del ítem no tiene alcance o no sucede en la organización.
+        </td>
+    </tr>
+
+</table>
+<hr>
+
+                <br>
+          <p>      Para un uso adecuado, es importante generar una escala que permita medir cuantitativamente las respuestas otorgadas por los usuarios del aplicativo. La medición se realizará de la siguiente manera:
+     
+ <br>
+Calificación cuantitativa:
+</p>
+<br>
+<hr>
+<table class="a"  [ngStyle]="{backgroundColor:'var(--orange-300)'}">
+
+    <tr>
+        <th>Calificación</th>
+        <th>Significado</th>
+
+    </tr>
+
+    <tr>
+        <td>SI</td>
+        <td>Toda respuesta "Si" equivaldrá a 1 punto.</td>
+    </tr>
+    <tr>
+        <td>SI PARCIAL</td>
+        <td>Toda respuesta "Si Parcial" equivaldrá a 2 puntos</td>
+    </tr>
+    <tr>
+        <td>NO</td>
+        <td>Toda respuesta "No" equivaldrá a 3 puntos.</td>
+    </tr>
+    <tr>
+        <td>NO APLICA</td>
+        <td>Toda respuesta "No Aplica" equivaldrá a 0 puntos dado que no existe en la empresa.
+        </td>
+    </tr>
+
+</table>
+
+<hr>
+<br>
+<p>
+Medición Cualitativa:
+Aunado a lo expuesto, es importante mencionar que la anterior estructura implícitamente es traslada a un mapeo de riesgos bajo los siguientes criterios:
+</p>
+<br>
+<hr>
+<table class="a"  [ngStyle]="{backgroundColor:'var(--orange-300)'}">
+
+    <tr>
+        <th>Tipo de riesgo</th>
+        <th>Significado</th>
+
+    </tr>
+
+    <tr>
+        <td bgcolor="#96FF33">RIESGO BAJO</td>
+        <td>Indica que la amenaza no representa un ataque importante para la estructura organizacional (se asocia con la escala de respuesta “Si” y toma un valor de 1 punto).</td>
+    </tr>
+    <tr>
+        <td bgcolor="yellow">RIESGO MEDIO</td>
+        <td>Indica que la amenaza representa un impacto que puede afectar de forma parcial la estructura organizacional (se asocia con la escala de respuesta “Si parcial” y toma un valor de 2 puntos).</td>
+    </tr>
+    <tr>
+        <td bgcolor="red">RIESGO ALTO</td>
+        <td>Indica que la amenaza representa un gran impacto sobre la estructura organizacional (se asocia con la escala de respuesta “No” y toma un valor de 3 puntos).</td>
+    </tr>
+
+</table>
+
+<hr>
+<br>
+<p>
+Como resultado de una medición cuantitativa y dado que se tiene un total de 100 preguntas 
+para la medición, el máximo de puntos a obtener será de 300. El nivel de riesgos entonces
+ se medirá con la siguiente escala a partir de la cual se determinará el tipo de control 
+ y riesgos existentes en la organización.
+</p>
+ <hr>
+ <br>
+
+ <table class="a"  [ngStyle]="{backgroundColor:'var(--orange-300)'}">
+
+    <tr>
+        <th>PUNTOS</th>
+        <th>NIVEL DE RIESGO</th>
+
+    </tr>
+
+    <tr>
+        <td >Desde 1 Hasta 100 puntos</td>
+        <td>Riesgo bajo</td>
+    </tr>
+    <tr>
+        <td>Desde 101 hasta 200 puntos</td>
+        <td>Riesgo medio</td>
+    </tr>
+    <tr>
+        <td >Desde 201 hasta 300 puntos</td>
+        <td>Riesgo alto</td>
+    </tr>
+
+</table>
+<hr>
+<br>
+
+<p> resultado de lo anterior se obtendrán 3 posibles variables para 
+calificar el nivel de control en la organización.
+</p>
+<br>
+<hr>
+
+<table class="a"  [ngStyle]="{backgroundColor:'var(--orange-300)'}">
+
+    <tr>
+        <th>Calificación del Control organizacional </th>
+        <th>Observaciones</th>
+
+    </tr>
+
+    <tr>
+        <td >Efectivo</td>
+        <td>La organización cuenta en general con controles firmes que permiten garantizar su continuidad y el logro de los objetivos y metas propuestas.</td>
+    </tr>
+    <tr>
+        <td>Parcialmente confiable con debilidades</td>
+        <td>La organización cuenta con algunos controles para el logro de los objetivos, sin embargo, se deben reforzar algunas variables y definir estrategias de cumplimiento.</td>
+    </tr>
+    <tr>
+        <td >No confiable</td>
+        <td>La organización no cuenta con suficientes controles para el cumplimiento de sus logros, lo que dificulta su continuidad.</td>
+    </tr>
+
+</table>
+<br>
+<hr>
+<br>
+
+</div>
+
+<footer class="container-fluid text-center">
+    <p>Hexagono 1.0</p>
+  </footer>

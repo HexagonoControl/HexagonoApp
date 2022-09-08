@@ -1,0 +1,27 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+
+html, body{
+    margin: 10px;
+    background-color: var(--surface-b);
+    font-family: var( --font-family );
+}
+
+sizes,
+    p-inputtext {
+        display: block;
+        margin-bottom: .5rem;
+    }
+        last-child {
+            margin-bottom: 0;
+        }
+    
+
+.p-field * {
+    display: block;
+}

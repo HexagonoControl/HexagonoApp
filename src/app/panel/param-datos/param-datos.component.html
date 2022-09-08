@@ -1,0 +1,34 @@
+<app-panel-control></app-panel-control>
+  <div class="card" >
+
+    <h5>Registrar Pregunta</h5>
+    
+    <form class="">
+
+        <div class="form-group " >
+            <label for="name">Pregunta</label>
+            <input type="text" class="form-control field col-12 md:col-12" id="question_name"
+                   required
+                   [(ngModel)]="question.question_name" name="question_name">
+          </div>
+ 
+
+          <div class="form-group">
+            <label for="">SubCategoría:</label>
+    
+            <p-cascadeSelect [(ngModel)]="question.id_subcategory" [ngModelOptions]="{standalone: true}" [options]="subcategory" optionLabel="subcategory_name"
+            [optionGroupChildren]="['subcategory']" [style]="{'minWidth': '80rem'}" placeholder="Selecciona una SubCategoría">
+          </p-cascadeSelect>
+        </div>
+
+   
+    <button pButton class="p-button-warning btn-block m-2 px-4 py-2" (click)="regisPregunta(question)" 
+     >Registrar Pregunta</button>
+     <label class="error-message">{{errorMessage}}</label>
+     <label class="success-message">{{successMessage}}</label>
+    </form>
+  
+<app-tabla-datos></app-tabla-datos>
+</div>
+
+

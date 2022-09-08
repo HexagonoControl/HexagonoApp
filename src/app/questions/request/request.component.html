@@ -1,0 +1,39 @@
+<app-panel-control></app-panel-control>
+
+<div class="card">
+
+    <p-table #dt [value]="quests" >
+        <ng-template pTemplate="caption">
+            <div class="p-d-flex p-ai-center p-jc-between">
+                <h5 class="p-m-0">Aspectos generales del control organizacional
+                </h5>
+                
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+           
+                <th pSortableColumn="question">No. <p-sortIcon field="id"></p-sortIcon></th>
+                <th pSortableColumn="question" >Observación <p-sortIcon field="question"></p-sortIcon></th>
+
+    
+                <th></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-quest>
+         
+            <tr>
+           
+                <td>{{ quest.id_question }}</td>
+                <td>{{ quest.question_name }}</td>
+               <td>  <input type="text" class="form-control field col-12 md:col-12" id="observacion"
+                    [(ngModel)]="quest.observacion" name="observacion" value="observacion"> </td>
+                 
+            
+        </ng-template>
+
+        
+      </p-table>
+      <button pButton class="p-button-warning btn-block m-1 px-15 py-2" 
+      (click)="regisPregunta(quest)" >Siguiente</button>
+  </div>

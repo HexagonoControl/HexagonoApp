@@ -1,0 +1,55 @@
+<app-panel-control></app-panel-control>
+
+<div class="card">
+
+    <p-table #dt [value]="user" >
+        <ng-template pTemplate="caption">
+            <div class="p-d-flex p-ai-center p-jc-between">
+                <h5 class="p-m-0">VER TUS RESPUESTAS Y DIAGNÓSTICO</h5>
+                
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+           
+                <th pSortableColumn="question">No. Razón Social <p-sortIcon field="id"></p-sortIcon></th>
+                <th pSortableColumn="question">Correo Electrónico<p-sortIcon field="question"></p-sortIcon></th>
+                <th pSortableColumn="question">Razón Social <p-sortIcon field="question"></p-sortIcon></th>
+                <th pSortableColumn="question">Representante Legal <p-sortIcon field="question"></p-sortIcon></th>
+                <th pSortableColumn="question">CIIU <p-sortIcon field="question"></p-sortIcon></th>
+                <th pSortableColumn="question">País <p-sortIcon field="question"></p-sortIcon></th>
+                <th pSortableColumn="question">Departamento<p-sortIcon field="question"></p-sortIcon></th>
+                <th pSortableColumn="question">Ciudad <p-sortIcon field="question"></p-sortIcon></th>
+    
+                <th></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-user>
+         
+            <tr>
+           
+                <td>{{ user.id_user }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.razon }}</td>
+                <td>{{ user.repres }}</td>
+                <td>{{ user.ciiu }}</td>
+                <td>{{ user.country }}</td>
+                <td>{{ user.dpto }}</td>
+                <td>{{ user.city }}</td>
+
+                <button pButton type="button" 
+                 label="VER REPORTE" class="p-button-rounded p-button-info" (click)="VerReportes(user)"
+                ></button>
+                       
+                
+                
+                <!--
+                  <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editProduct(product)"></button>
+                    <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteProduct(product)"></button>
+               -->
+                  
+            
+        </ng-template>
+      </p-table>
+
+  </div>

@@ -1,0 +1,35 @@
+
+<div class="container">  
+    <div class="row p-3">
+      <img width="400" alt="Angular Logo" src="../assets/logo.jpg">
+    <div class="card-header" >
+   
+    <div class="form"> 
+     
+        <form class="new-user-form"  [formGroup]="validations_form" (ngSubmit)="Ingresar(validations_form)">
+      <div class="card">
+        
+         <div class="field col-12 md:col-9">
+          <label for="firstname6">Correo Electrónico</label>
+          <input id="mail" formControlName="email" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full" required>
+         </div>
+        <div class="field col-12 md:col-9">
+          <label for="lastname6">Contraseña:</label>
+          <input id="pass" formControlName="password" type="password" class=" text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+        </div>
+        </div>
+       
+
+      
+
+      <p-button icon="pi pi-check" label="Ingresar" styleClass="p-button-warning mr-2"type="submit" 
+      [disabled]="!validations_form.valid"></p-button>
+      <label>Aun no tienes cuenta? <a routerLink="/register">Registrarse</a></label>
+
+  
+        </form>
+      </div>
+
+  </div>
+</div>
+</div>

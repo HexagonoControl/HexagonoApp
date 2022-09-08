@@ -1,0 +1,78 @@
+
+  <div class="form">
+    <form class="new-user-form"  [formGroup]="validations_form" (ngSubmit)="registrarse(validations_form)">
+  
+    <h5>REGISTRO</h5>
+  
+    <div class="formgrid grid">
+    <div class="field col-12 md:col-3">
+      <label for="firstname6">*Correo Electrónico</label>
+      <input id="mail" formControlName="email" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full" required>
+     </div>
+    <div class="field col-12 md:col-3">
+      <label for="lastname6">*Contraseña:</label>
+      <input id="pass" formControlName="password" type="password" class=" text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+   
+  
+    <div class="field col-12 md:col-3">
+      <label for="city">*Nit</label>
+      <input id="nit" formControlName="nit" type="number" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+  </div>
+    <div class="field col-12 md:col-3">
+        <label for="city">*Razón Social</label>
+        <input  id="razon" formControlName="razon" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+    <div class="field col-12 md:col-3">
+      <label for="city">*Representante legal</label>
+      <input  id="repres" formControlName="repres" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+  </div>
+       <div class="field col-12 md:col-3">
+        <label for="zip">*CIIU Descripción actividad económica</label>
+        <input  id="ciiu"  formControlName="ciiu" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+    <div class="field col-12 md:col-3">
+      <label for="zip">País</label>
+      <input  id="country" formControlName="country" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+  </div>
+  <div class="field col-12 md:col-3">
+    <label for="zip">Departamento</label>
+    <input  id="dpto"  formControlName="dpto" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+</div>
+<div class="field col-12 md:col-3">
+  <label for="zip">Ciudad</label>
+  <input  id="city" formControlName="city" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+</div>
+</div>
+
+<div class="col-12 md:col-4">
+  Terminos y condiciones:
+  <p-scrollPanel [style]="{width: '300%', height: '80px'}" styleClass="custombar1">
+      <p>
+        Manifiesto y acepto que conozco los términos y condiciones de la política para el uso y 
+        tratamiento de datos personales (ley 1581 de 2012), y autorizo el uso de mis datos personales 
+        para recibir notificaciones sobre los trámites relacionados con las actividades asociadas 
+        al proyecto de investigación que respalda al modelo Hexágono de Control Organizacional. 
+        Los datos suministrados serán utilizados con fines estrictamente académicos y no buscan 
+        la generación de lucro.
+      </p>
+  </p-scrollPanel>
+
+
+<div class="field-checkbox field col-18 md:col-6" collapsed="true">
+  <p-checkbox   formControlName="terminos" [binary]="true" inputId="binary"  ></p-checkbox>
+  <label for="binary">Acepto</label>
+</div>
+  
+   
+   
+<button pButton class="p-button-warning btn-block m-2 px-8 py-2" type="submit" 
+[disabled]="!validations_form.valid || validations_form.value.terminos === false">Registrar</button>
+
+    <label>Ya tenes cuenta? <a href="#/login">Ingresar</a></label>
+  </div> 
+    </form>
+  </div>
+  
+    
+  

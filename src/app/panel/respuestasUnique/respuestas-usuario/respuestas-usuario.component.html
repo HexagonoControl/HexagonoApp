@@ -1,0 +1,100 @@
+<div class="text-layout">
+
+    <h1>SUBCATEGORÍAS SUJETAS A MEDICIÓN  
+    </h1>
+    <p>
+
+      
+    </p>
+</div>
+<div class="flex">
+    <div class="flex-1 px-4" >
+        
+        <p-table [value]="indic" styleClass="p-datatable-gridlines" responsiveLayout="scroll">
+            <ng-template pTemplate="caption" *ngFor="let in of indic">
+                {{ in.subcategory_name }}
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th></th>
+                    <th>Indicador</th>
+                    <th>Calificación de riesgo</th>
+                    <th>Nivel de riesgo</th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-in>
+                <tr><td></td>
+                    <td>{{ in.nombre_indicador  }} </td>
+                    <td> {{ in.options | number }} </td>
+                     <td *ngIf="in.options>2.5" bgcolor="red"> ALTO </td>
+                     <td *ngIf="in.options<1.5" bgcolor="green"> BAJO </td>
+                     <td *ngIf="in.options>=1.5 && in.options<=2.5" bgcolor="yellow"> MEDIO </td>
+                </tr>
+          
+            </ng-template>
+        </p-table>
+
+
+</div>
+
+  
+
+ 
+</div> 
+  
+
+  <div class="text-layout">
+
+    <h1> Respuestas</h1>
+    <p>
+
+       
+    </p>
+</div>
+
+<div class="flex">
+    <div class="flex-1 px-6">
+  
+
+
+</div>
+
+
+<div class="card">
+
+    <p-table #dt  [value]="respuesta" >
+        <ng-template pTemplate="caption">
+            <div class="p-d-flex p-ai-center p-jc-between">
+                <h5 class="p-m-0">VER TUS RESPUESTAS Y DIAGNÓSTICO</h5>
+                
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+           
+                <th pSortableColumn="respuesta">No. Pregunta <p-sortIcon field="id"></p-sortIcon></th>
+                <th pSortableColumn="respuesta">Pregunta <p-sortIcon field="id"></p-sortIcon></th>
+                <th pSortableColumn="respuesta">Respuesta <p-sortIcon field="respuesta"></p-sortIcon></th>
+                     <th></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-resp>
+         
+            <tr>
+           
+                <td>{{ resp.id_question }}</td>
+                <td> {{ resp.question_name }} </td>
+               <td>{{ resp.options }}</td>
+              
+       
+            
+        </ng-template>
+    </p-table>
+  </div>
+
+
+
+
+<p-toast></p-toast>
+
+

@@ -1,0 +1,42 @@
+<app-panel-control></app-panel-control>
+
+<div class="card">
+
+    <p-table #dt [value]="quests" >
+        <ng-template pTemplate="caption">
+            <div class="p-d-flex p-ai-center p-jc-between">
+                <h5 class="p-m-0">1. CONTROL ADMINISTRATIVO
+                </h5>
+                
+            </div>
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+           
+                <th pSortableColumn="question">No. <p-sortIcon field="id"></p-sortIcon></th>
+                <th pSortableColumn="question">Pregunta<p-sortIcon field="question"></p-sortIcon></th>
+                <th pSortableColumn="question">Respuesta <p-sortIcon field="question"></p-sortIcon></th>
+                <th pSortableColumn="question" >Observación <p-sortIcon field="question"></p-sortIcon></th>
+
+    
+                <th></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-quest>
+         
+            <tr>
+           
+                <td>{{ quest.id_question }}</td>
+                <td>{{ quest.question_name }}</td>
+                <td><p-selectButton [options]="stateOptions" [(ngModel)]="quest.options" [ngModelOptions]="{standalone: true}" optionLabel="label" optionValue="value"></p-selectButton>
+                </td>
+            
+                 
+            
+        </ng-template>
+
+        
+      </p-table>
+      <button pButton class="p-button-warning btn-block m-2 px-10 py-2" 
+      (click)="regisPregunta(quest)" >Siguiente</button>
+  </div>

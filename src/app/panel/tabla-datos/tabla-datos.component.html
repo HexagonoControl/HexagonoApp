@@ -1,0 +1,53 @@
+
+<p-toast></p-toast>
+
+
+<div class="card">
+
+  <p-table #dt  [value]="quests" [rows]="10" [paginator]="true" 
+     [rowHover]="true"
+      currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries" [showCurrentPageReport]="true">
+      <ng-template pTemplate="caption">
+          <div class="p-d-flex p-ai-center p-jc-between">
+              <h5 class="p-m-0">Administrar preguntas</h5>
+              
+          </div>
+      </ng-template>
+      <ng-template pTemplate="header">
+          <tr>
+              <th style="width: 3rem">
+                  <p-tableHeaderCheckbox></p-tableHeaderCheckbox>
+              </th>
+              <th pSortableColumn="question">No. Pregunta <p-sortIcon field="id"></p-sortIcon></th>
+              <th pSortableColumn="question">Pregunta <p-sortIcon field="question"></p-sortIcon></th>
+              <th pSortableColumn="state">Subcategoría <p-sortIcon field="state"></p-sortIcon></th>
+              
+              <th></th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-quest>
+       
+          <tr>
+              <td>
+                  <p-tableCheckbox [value]="quest"></p-tableCheckbox>
+              </td>
+              <td>{{ quest.id_question }}</td>
+              <td>{{ quest.question_name }}</td>
+              <td>{{ quest.subcategory_name }}</td>
+              <button pButton pRipple type="button" icon="pi pi-check" class="p-button-rounded"
+              (click)="editQuestion(quest)" *ngIf="quest.active == 1"></button>
+              <button pButton pRipple type="button" icon="pi pi-times" *ngIf="quest.active == 0" class="p-button-rounded p-button-danger"
+              (click)="editQuestion(quest)"></button>
+
+              
+              
+              
+              <!--
+                <button pButton pRipple icon="pi pi-pencil" class="p-button-rounded p-button-success p-mr-2" (click)="editProduct(product)"></button>
+                  <button pButton pRipple icon="pi pi-trash" class="p-button-rounded p-button-warning" (click)="deleteProduct(product)"></button>
+             -->
+                
+          
+      </ng-template>
+  </p-table>
+</div>

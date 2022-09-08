@@ -1,0 +1,430 @@
+<div class="text-layout" id="htmlData">
+
+    <h1 >Diagnóstico Análisis</h1>
+    
+    <div class="flex-1 px-4">
+        <div class="flex-1 px-4">
+            <p-table [value]="users" styleClass="p-datatable-gridlines" responsiveLayout="scroll">
+  
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th>EMPRESA ENCUESTADA
+                        </th>
+                        <th>REPRESENTANTE LEGAL
+                        </th>
+                    </tr>
+                </ng-template>
+                <ng-template pTemplate="body" >
+                  <ng-container *ngFor="let user of users">
+                        <tr>
+                            <td> {{ user.razon }}   </td>
+                        <td>{{ user.repres}} </td>
+      
+                    </tr>
+                </ng-container>
+   
+                        
+                </ng-template>
+
+            </p-table>
+            
+    </div>
+
+    <div>
+        <hr>
+    </div>
+    
+
+
+
+</div>
+<div class="flex">
+    <div class="flex-1 px-4">
+        <p-card header="1. Control Administrativo">
+     </p-card>
+     <p-table [value]="indicador1" styleClass="p-datatable-gridlines" responsiveLayout="scroll">
+        <ng-template pTemplate="caption" *ngFor="let in of indicador1">
+            {{ in.subcategory_name }}
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th></th>
+                <th>Indicador</th>
+                <th>Calificación de riesgo</th>
+                <th>Nivel de riesgo</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-in>
+            <tr><td>{{ in.id_indicador }}</td>
+                <td>{{ in.nombre_indicador  }} </td>
+                <td> {{ in.options | number }} </td>
+                 <td *ngIf="in.options>2.5" bgcolor="red"> ALTO </td>
+                 <td *ngIf="in.options<1.5" bgcolor="#96FF33"> BAJO </td>
+                 <td *ngIf="in.options>=1.5 && in.options<=2.5" bgcolor="yellow"> MEDIO </td>
+            </tr>
+           
+        </ng-template>
+        
+        <ng-template pTemplate="summary">
+           <tr>
+            <td>PROMEDIO CONTROL ADMINISTRATIVO:  {{ this.avg1  |number }} </td>
+           </tr>
+           <td *ngIf="this.avg1>2.5" bgcolor="red"> ALTO </td>
+           <td *ngIf="this.avg1<1.5" bgcolor="#96FF33"> BAJO </td>
+           <td *ngIf="this.avg1>=1.5 && this.avg1<=2.5" bgcolor="yellow"> MEDIO </td>
+
+        </ng-template>
+    </p-table>
+    </div>
+
+    <div class="flex-1 px-4">
+        <div class="flex-1 px-4">
+            <p-card header="Control Administrativo">
+
+<app-control-administrativo></app-control-administrativo>
+           
+        </p-card>
+    </div>
+</div> 
+  </div>
+
+<div>
+    <hr>
+</div>
+
+
+<div class="text-layout">
+
+</div>
+<div class="flex">
+    <div class="flex-1 px-4">
+        <p-card header="2. Control Operacional">
+     </p-card>
+     <p-table [value]="indicador2" styleClass="p-datatable-gridlines" responsiveLayout="scroll">
+        <ng-template pTemplate="caption" *ngFor="let ind of indicador2">
+            {{ ind.subcategory_name }}
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th></th>
+                <th>Indicador</th>
+                <th>Calificación de riesgo</th>
+                <th>Nivel de riesgo</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-indic2>
+            <tr><td></td>
+                <td>{{ indic2.nombre_indicador  }} </td>
+                <td> {{ indic2.options | number }} </td>
+                 <td *ngIf="indic2.options>2.5" bgcolor="red"> ALTO </td>
+                 <td *ngIf="indic2.options<1.5" bgcolor="#96FF33"> BAJO </td>
+                 <td *ngIf="indic2.options>=1.5 && indic2.options<=2.5" bgcolor="yellow"> MEDIO </td>
+            </tr>
+            
+      
+        </ng-template>
+        
+        <ng-template pTemplate="summary">
+            <tr>
+                <td>PROMEDIO CONTROL ADMINISTRATIVO:  {{ this.avg2  |number }} </td>
+               </tr>
+               <td *ngIf="this.avg2>2.5" bgcolor="red"> ALTO </td>
+               <td *ngIf="this.avg2<1.5" bgcolor="#96FF33"> BAJO </td>
+               <td *ngIf="this.avg2>=1.5 && this.avg2<=2.5" bgcolor="yellow"> MEDIO </td>
+
+        </ng-template>
+    </p-table>
+    </div>
+
+    <div class="flex-1 px-4">
+        <div class="flex-1 px-4">
+            <p-card header="Control Operacional">
+
+<app-control-operacional></app-control-operacional>
+           
+        </p-card>
+    </div>
+</div> 
+  </div>
+  <div>
+    <hr>
+</div>
+<div>
+    <hr>
+</div>
+
+
+<div class="text-layout">
+
+</div>
+<div class="flex">
+    <div class="flex-1 px-4">
+        <p-card header="3. Control Contable">
+     </p-card>
+     <p-table [value]="indicador3" styleClass="p-datatable-gridlines" responsiveLayout="scroll">
+        <ng-template pTemplate="caption" *ngFor="let ind of indicador3">
+            {{ ind.subcategory_name }}
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th></th>
+                <th>Indicador</th>
+                <th>Calificación de riesgo</th>
+                <th>Nivel de riesgo</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-indic3>
+            <tr><td></td>
+                <td>{{ indic3.nombre_indicador  }} </td>
+                <td> {{ indic3.options | number }} </td>
+                 <td *ngIf="indic3.options>2.5" bgcolor="red"> ALTO </td>
+                 <td *ngIf="indic3.options<1.5" bgcolor="#96FF33"> BAJO </td>
+                 <td *ngIf="indic3.options>=1.5 && indic3.options<=2.5" bgcolor="yellow"> MEDIO </td>
+            </tr>
+            
+      
+        </ng-template>
+        
+        <ng-template pTemplate="summary">
+            <tr>
+                <td>PROMEDIO CONTROL ADMINISTRATIVO:  {{ this.avg3  |number }} </td>
+               </tr>
+               <td *ngIf="this.avg3>2.5" bgcolor="red"> ALTO </td>
+               <td *ngIf="this.avg3<1.5" bgcolor="#96FF33"> BAJO </td>
+               <td *ngIf="this.avg3>=1.5 && this.avg3<=2.5" bgcolor="yellow"> MEDIO </td>
+
+        </ng-template>
+    </p-table>
+    </div>
+
+    <div class="flex-1 px-4">
+        <div class="flex-1 px-4">
+            <p-card header="Control Contable">
+
+                <app-control-contable></app-control-contable>
+        </p-card>
+
+    </div>
+</div> 
+  </div>
+  <div>
+    <hr>
+</div>
+
+
+<div class="text-layout">
+
+</div>
+<div class="flex">
+    <div class="flex-1 px-4">
+        <p-card header="4. Riesgos Ambientales">
+     </p-card>
+     <p-table [value]="indicador4" styleClass="p-datatable-gridlines" responsiveLayout="scroll">
+        <ng-template pTemplate="caption" *ngFor="let ind of indicador4">
+            {{ ind.subcategory_name }}
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th></th>
+                <th>Indicador</th>
+                <th>Calificación de riesgo</th>
+                <th>Nivel de riesgo</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-indic4>
+            <tr><td></td>
+                <td>{{ indic4.nombre_indicador  }} </td>
+                <td> {{ indic4.options | number }} </td>
+                 <td *ngIf="indic4.options>2.5" bgcolor="red"> ALTO </td>
+                 <td *ngIf="indic4.options<1.5" bgcolor="#96FF33"> BAJO </td>
+                 <td *ngIf="indic4.options>=1.5 && indic4.options<=2.5" bgcolor="yellow"> MEDIO </td>
+            </tr>
+            
+      
+        </ng-template>
+        
+        <ng-template pTemplate="summary">
+            <tr>
+                <td>PROMEDIO CONTROL ADMINISTRATIVO:  {{ this.avg4  |number }} </td>
+               </tr>
+               <td *ngIf="this.avg4>2.5" bgcolor="red"> ALTO </td>
+               <td *ngIf="this.avg4<1.5" bgcolor="#96FF33"> BAJO </td>
+               <td *ngIf="this.avg4>=1.5 && this.avg4<=2.5" bgcolor="yellow"> MEDIO </td>
+
+        </ng-template>
+    </p-table>
+    </div>
+
+    <div class="flex-1 px-4">
+        <div class="flex-1 px-4">
+            <p-card header="Riesgos Ambientales">
+                <app-riesgos-ambientales></app-riesgos-ambientales>
+            </p-card>
+
+    </div>
+</div> 
+  </div>
+  <div>
+    <hr>
+</div>
+
+
+<div class="text-layout">
+
+</div>
+<div class="flex">
+    <div class="flex-1 px-4">
+        <p-card header="5. Riesgos Sociales">
+     </p-card>
+     <p-table [value]="indicador5" styleClass="p-datatable-gridlines" responsiveLayout="scroll">
+        <ng-template pTemplate="caption" *ngFor="let ind of indicador5">
+            {{ ind.subcategory_name }}
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th></th>
+                <th>Indicador</th>
+                <th>Calificación de riesgo</th>
+                <th>Nivel de riesgo</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-indic5>
+            <tr><td></td>
+                <td>{{ indic5.nombre_indicador  }} </td>
+                <td> {{ indic5.options | number }} </td>
+                 <td *ngIf="indic5.options>2.5" bgcolor="red"> ALTO </td>
+                 <td *ngIf="indic5.options<1.5" bgcolor="#96FF33"> BAJO </td>
+                 <td *ngIf="indic5.options>=1.5 && indic5.options<=2.5" bgcolor="yellow"> MEDIO </td>
+            </tr>
+            
+      
+        </ng-template>
+        
+        <ng-template pTemplate="summary">
+            <tr>
+                <td>PROMEDIO CONTROL ADMINISTRATIVO:  {{ this.avg5  |number }} </td>
+               </tr>
+               <td *ngIf="this.avg5>2.5" bgcolor="red"> ALTO </td>
+               <td *ngIf="this.avg5<1.5" bgcolor="#96FF33"> BAJO </td>
+               <td *ngIf="this.avg5>=1.5 && this.avg5<=2.5" bgcolor="yellow"> MEDIO </td>
+
+        </ng-template>
+    </p-table>
+    </div>
+
+    <div class="flex-1 px-4">
+        <div class="flex-1 px-4">
+            <p-card header="Riesgos Sociales">
+                <app-riesgos-sociales></app-riesgos-sociales>
+            </p-card>
+
+    </div>
+</div> 
+  </div>
+  <div>
+    <hr>
+</div>
+
+
+<div class="text-layout">
+
+</div>
+<div class="flex">
+    <div class="flex-1 px-4">
+        <p-card header="6. Riesgos Tecnológicos">
+     </p-card>
+     <p-table [value]="indicador6" styleClass="p-datatable-gridlines" responsiveLayout="scroll">
+        <ng-template pTemplate="caption" *ngFor="let ind of indicador6">
+            {{ ind.subcategory_name }}
+        </ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th></th>
+                <th>Indicador</th>
+                <th>Calificación de riesgo</th>
+                <th>Nivel de riesgo</th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-indic6>
+            <tr><td></td>
+                <td>{{ indic6.nombre_indicador  }} </td>
+                <td> {{ indic6.options | number }} </td>
+                 <td *ngIf="indic6.options>2.5" bgcolor="red"> ALTO </td>
+                 <td *ngIf="indic6.options<1.5" bgcolor="#96FF33"> BAJO </td>
+                 <td *ngIf="indic6.options>=1.5 && indic6.options<=2.5" bgcolor="yellow"> MEDIO </td>
+            </tr>
+            
+      
+        </ng-template>
+        
+        <ng-template pTemplate="summary">
+            <tr>
+                <td>PROMEDIO CONTROL ADMINISTRATIVO:  {{ this.avg6  |number }} </td>
+            </tr>
+                <td *ngIf="this.avg6>2.5" bgcolor="red"> ALTO </td>
+                <td *ngIf="this.avg6<1.5" bgcolor="#96FF33"> BAJO </td>
+                <td *ngIf="this.avg6>=1.5 && this.avg6<=2.5" bgcolor="yellow"> MEDIO </td>
+
+        </ng-template>
+    </p-table>
+    </div>
+
+    <div class="flex-1 px-4">
+        <div class="flex-1 px-4">
+            <p-card header="Riesgos Tecnológicos">
+                <app-riesgos-tecnologicos></app-riesgos-tecnologicos>
+            </p-card>
+
+    </div>
+</div> 
+  </div>
+  <div>
+    <hr>
+</div>
+
+<div class="flex-1 px-4">
+    <div class="flex-1 px-4">
+        <p-table [value]="resp" styleClass="p-datatable-gridlines" responsiveLayout="scroll">
+            <ng-template pTemplate="caption">
+                <div *ngFor="let tot of resp">
+                CALIFICACIÓN TOTAL CONTROL ORGANIZACIONAL:  {{tot.options | number }} 
+        
+        {{ this.calificacion }}       
+
+            </div>
+            </ng-template>
+            <ng-template pTemplate="header">
+                <tr>
+                    <th>PUNTOS
+                    </th>
+                    <th>NIVEL RIESGO
+                    </th>
+                    <th>CALIFICACIÓN DEL  CONTROL ORGANIZACIONAL	
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" >
+                    <tr><td> Desde 1 Hasta 100 puntos</td>
+                    <td>Riego Bajo</td>
+                    <td>Efectivo</td>
+                </tr>
+                <tr><td>Desde 101 hasta 200 puntos</td>
+                    <td>Riesgo Medio</td>
+                    <td>Parcialmente confiable con debilidades</td>
+                </tr>
+                <tr><td>Desde 201 hasta 300 puntos</td>
+                    <td>Riesgo Alto</td>
+                    <td>No confiable</td>
+                </tr>
+                    
+            </ng-template>
+            <ng-template pTemplate="summary">
+             <app-calificacion-total></app-calificacion-total>
+            </ng-template>
+        </p-table>
+
+        <div class="col-md-4 text-right">
+            <button class="btn btn-success btn-block" (click)="openPDF()">Download PDF</button>
+        </div>
+        
+</div>

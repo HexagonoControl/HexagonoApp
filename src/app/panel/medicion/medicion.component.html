@@ -1,0 +1,40 @@
+<p-toast></p-toast>
+<!--
+<button pButton pRipple type="button" (click)="atras()" icon="pi pi-times" class="p-button-rounded p-button-danger"></button>
+-->
+<div class="card">
+
+  <p-table #dt  [value]="subCategorys" >
+      <ng-template pTemplate="caption">
+          <div class="p-d-flex p-ai-center p-jc-between">
+              <h5 class="p-m-0">VER TUS RESPUESTAS Y DIAGNÓSTICO</h5>
+              
+          </div>
+      </ng-template>
+      <ng-template pTemplate="header">
+          <tr>
+         
+              <th pSortableColumn="question">No. Subcategoría <p-sortIcon field="id"></p-sortIcon></th>
+              <th pSortableColumn="question">Nombre <p-sortIcon field="question"></p-sortIcon></th>
+     
+              <th></th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-subcategory>
+       
+          <tr>
+         
+              <td>{{ subcategory.id_subcategory }}</td>
+              <td>{{ subcategory.subcategory_name }}</td>
+  
+              <button pButton type="button" (click)="VerRespuestas(subcategory)"
+               label="VER RESPUESTAS" class="p-button-rounded p-button-info"
+              ></button>
+                     
+      
+          
+      </ng-template>
+    </p-table>
+    <button pButton class="p-button-warning btn-block m-2 px-8 py-2" label="DIAGNÓSTICO GENERAL" routerLink="/diagnostico-general"></button>
+    
+</div>
