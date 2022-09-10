@@ -29,7 +29,7 @@ export class RiesgosSocialesComponent implements OnInit {
       labels: this.indicador,
       datasets: [
           {
-              label: 'Control Sociales',
+              label: 'Riesgos Sociales',
               backgroundColor: '#42A5F5',
               data: this.promedio
           }

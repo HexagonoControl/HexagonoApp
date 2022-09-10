@@ -19,7 +19,7 @@ export class Request3Component implements OnInit {
   value3: any;
   users :Users= new Users();
   constructor(private database: DatabaseService, private router:Router, private authService: AuthService) { 
-    this.stateOptions = [{label: 'SI', value: '1'}, {label: 'SI PARCIAL', value: '2'},
+    this.stateOptions = [{label: 'SÍ', value: '1'}, {label: 'SI PARCIAL', value: '2'},
     {label: 'NO', value: '3'}, {label: 'NO APLICA', value: '0'}];
 
   }
@@ -42,7 +42,7 @@ export class Request3Component implements OnInit {
     var id_user = localStorage.getItem("id_user");
     this.database.requestRegister1(respuesta,id_user)
     .subscribe(data=>{
-    alert("Se Agrego con Exito...!!!");
+    alert("Se Agregó con Éxito...!!!");
 
     this.router.navigate(['request4']);
     })

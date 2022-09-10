@@ -16,7 +16,7 @@
             </ng-template>
             <ng-template pTemplate="header">
                 <tr>
-                    <th></th>
+                    <th>-</th>
                     <th>Indicador</th>
                     <th>Calificación de riesgo</th>
                     <th>Nivel de riesgo</th>
@@ -39,21 +39,9 @@
 
   
 
- 
-</div> 
-  
-
-  <div class="text-layout">
-
-    <h1> Respuestas</h1>
-    <p>
-
-       
-    </p>
-</div>
 
 <div class="flex">
-    <div class="flex-1 px-6">
+    <div class="flex-1 px-12">
   
 
 
@@ -84,8 +72,11 @@
            
                 <td>{{ resp.id_question }}</td>
                 <td> {{ resp.question_name }} </td>
-               <td>{{ resp.options }}</td>
-              
+
+                    <td *ngIf="resp.options==0"> NO APLICA </td>
+                 <td *ngIf="resp.options==1"> SÍ </td>
+                 <td *ngIf="resp.options==2"> SI PARCIAL </td>
+                 <td *ngIf="resp.options==3"> NO </td>
        
             
         </ng-template>

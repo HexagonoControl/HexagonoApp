@@ -26,3 +26,12 @@ tr, td, th{ border: 1px solid grey;}
       }
       .row.content {height:auto;} 
     }
+
+    h1{
+      color: rgb(255, 136, 0);
+    }
+
+
+    p{
+      color: rgb(0, 38, 255);
+    }
