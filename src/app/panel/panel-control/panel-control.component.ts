@@ -55,24 +55,23 @@ export class PanelControlComponent implements OnInit {
       this.getSubcategory6();
       this.getSubcategory7();
 
+      this.items = [
+        {label: 'Aspectos generales del control organizacional', icon: 'pi pi-info',routerLink: ['/request'],
+        disabled: this.isShown
+      },
+        {separator:true},
+        {label: 'Control Administrativo', icon: 'pi pi-times', command: () => {
+           
+        }},
+        {separator:true},
+        {label: 'Angular.io', icon: 'pi pi-info', url: 'http://angular.io'},
+        {separator:true},
+        {label: 'Setup', icon: 'pi pi-cog', routerLink: ['/setup']}
+    ];
+
       
     }
   
-    /*
-    ViewWillEnter(){
-      var id_user = localStorage.getItem("id_user");
-      console.log(id_user);
-      var id_subcategory = localStorage.getItem("id_sub");
-      console.log(id_subcategory);
-      this.database.getRespuestasId(id_user,id_subcategory)
-     .subscribe(data => {
-      this.respuesta = data,
-      this.questions = data;
-console.log(this.respuesta);
-
-         });
-  
-    }*/
  //CIERRE DE SESIÓN
     logout()
     {
@@ -113,18 +112,15 @@ console.log(this.respuesta);
 
     getSubcategory1(){
       var id_user = localStorage.getItem("id_user");
-      console.log(id_user);
       var id_subcategory = 1;
       this.database.getRespuestasId(id_user,id_subcategory)
      .subscribe(data => {
       this.respuesta = data,
       this.questions = data;
-      console.log(this.questions);
       for (const ind of this.respuesta) {
       this.indicador1.push(ind.realizado);
       }
       this.cargarDatos1(this.datos, this.indicador1);
-      console.log(this.indicador1);
       if(this.indicador1[0] == 1){
           this.isShown = false;
           }else{
@@ -141,18 +137,15 @@ console.log(this.respuesta);
 
    getSubcategory2(){
     var id_user = localStorage.getItem("id_user");
-    console.log(id_user);
     var id_subcategory = 2;
     this.database.getRespuestasId(id_user,id_subcategory)
    .subscribe(data => {
     this.respuesta = data,
     this.questions = data;
-    console.log(this.respuesta);
     for (const ind of this.respuesta) {
     this.indicador2.push(ind.realizado);
     }
     this.cargarDatos2(this.datos, this.indicador2);
-    console.log(this.indicador2);
     if(this.indicador2[0] == 1){
         this.isShown2 = false;
         }else{
@@ -170,18 +163,15 @@ console.log(this.respuesta);
 
  getSubcategory3(){
   var id_user = localStorage.getItem("id_user");
-  console.log(id_user);
   var id_subcategory = 3;
   this.database.getRespuestasId(id_user,id_subcategory)
  .subscribe(data => {
   this.respuesta = data,
   this.questions = data;
-  console.log(this.questions);
   for (const ind of this.respuesta) {
   this.indicador3.push(ind.realizado);
   }
   this.cargarDatos3(this.datos, this.indicador3);
-  console.log(this.indicador3);
   if(this.indicador3[0] == 1){
       this.isShown3 = false;
       }else{
@@ -199,18 +189,15 @@ cargarDatos3(datos, indicador3) {
 
 getSubcategory4(){
   var id_user = localStorage.getItem("id_user");
-  console.log(id_user);
   var id_subcategory = 4;
   this.database.getRespuestasId(id_user,id_subcategory)
  .subscribe(data => {
   this.respuesta = data,
   this.questions = data;
-  console.log(this.questions);
   for (const ind of this.respuesta) {
   this.indicador4.push(ind.realizado);
   }
   this.cargarDatos4(this.datos, this.indicador4);
-  console.log(this.indicador4);
   if(this.indicador4[0] == 1){
       this.isShown4 = false;
       }else{
@@ -229,18 +216,15 @@ cargarDatos4(datos, indicador4) {
 
 getSubcategory5(){
   var id_user = localStorage.getItem("id_user");
-  console.log(id_user);
   var id_subcategory = 5;
   this.database.getRespuestasId(id_user,id_subcategory)
  .subscribe(data => {
   this.respuesta = data,
   this.questions = data;
-  console.log(this.questions);
   for (const ind of this.respuesta) {
   this.indicador5.push(ind.realizado);
   }
   this.cargarDatos5(this.datos, this.indicador5);
-  console.log(this.indicador5);
   if(this.indicador5[0] == 1){
       this.isShown5 = false;
       }else{
@@ -258,18 +242,15 @@ cargarDatos5(datos, indicador5) {
 
 getSubcategory6(){
   var id_user = localStorage.getItem("id_user");
-  console.log(id_user);
   var id_subcategory = 6;
   this.database.getRespuestasId(id_user,id_subcategory)
  .subscribe(data => {
   this.respuesta = data,
   this.questions = data;
-  console.log(this.questions);
   for (const ind of this.respuesta) {
   this.indicador6.push(ind.realizado);
   }
   this.cargarDatos6(this.datos, this.indicador6);
-  console.log(this.indicador6);
   if(this.indicador6[0] == 1){
       this.isShown6 = false;
       }else{
@@ -288,18 +269,15 @@ cargarDatos6(datos, indicador6) {
 
 getSubcategory7(){
   var id_user = localStorage.getItem("id_user");
-  console.log(id_user);
   var id_subcategory = 7;
   this.database.getRespuestasId(id_user,id_subcategory)
  .subscribe(data => {
   this.respuesta = data,
   this.questions = data;
-  console.log(this.questions);
   for (const ind of this.respuesta) {
   this.indicador7.push(ind.realizado);
   }
   this.cargarDatos7(this.datos, this.indicador7);
-  console.log(this.indicador7);
   if(this.indicador7[0] == 1){
       this.isShown7 = false;
       }else{
@@ -312,6 +290,13 @@ cargarDatos7(datos, indicador7) {
   for (const index in datos) {
     this.barChartData.push({ data: datos[index], label: indicador7[index] });
    }
+}
+
+
+btnClick() {
+//  this.router.navigateByUrl('#/request');
+  console.log("salir");
+  
 }
 
 

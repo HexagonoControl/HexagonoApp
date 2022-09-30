@@ -20,6 +20,8 @@ import {ChartModule} from 'primeng/chart';
 import {ConfirmDialogModule} from 'primeng/confirmdialog';
 import {ConfirmationService} from 'primeng/api';
 import { MessagesModule } from 'primeng/messages';
+import {ToolbarModule} from 'primeng/toolbar';
+import {SplitButtonModule} from 'primeng/splitbutton';
 @NgModule({
   declarations: [],
   imports: [
@@ -42,7 +44,9 @@ import { MessagesModule } from 'primeng/messages';
     CardModule,
     ChartModule,
     ConfirmDialogModule,
-    MessagesModule
+    MessagesModule,
+    ToolbarModule,
+    SplitButtonModule
   ]
 })
 export class PrimeNgModule { }
